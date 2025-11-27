@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gokul R — Portfolio</title>
+  <meta name="description" content="Gokul R — Undergrad mathematics student (IISER Mohali)." />
+  <style>
+    :root{--accent:#0b6;--bg:#fafafa;--text:#222;--muted:#666}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:var(--text);line-height:1.5}
+    a{color:var(--accent);text-decoration:none}
+    header{position:relative;min-height:320px;display:flex;align-items:center;}
+    /* Banner: background image file expected at /math-banner.jpg */
+    .banner{
+      width:100%;height:320px;background-size:cover;background-position:center center;position:relative;display:flex;align-items:center;
+    }
+    .banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom right, rgba(10,10,10,0.45), rgba(10,10,10,0.3));}
+    .hero{position:relative;z-index:2;padding:36px;max-width:1100px;margin:auto;display:flex;align-items:center;gap:20px}
+
+    .profile-photo{width:110px;height:110px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#ddd;border:4px solid rgba(255,255,255,0.9)}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-text{color:white}
+    .hero-text h1{margin:0;font-size:28px;letter-spacing:0.2px}
+    .hero-text p{margin:6px 0 0;color:rgba(255,255,255,0.95)}
+
+    nav.topnav{background:white;box-shadow:0 1px 0 rgba(0,0,0,0.06)}
+    .container{max-width:1100px;margin:0 auto;padding:18px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{padding:10px 8px;color:var(--muted);font-weight:600}
+    .menu a.active{color:var(--text)}
+
+    main{max-width:1100px;margin:30px auto;padding:0 18px}
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:28px}
+    .card{background:white;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,20,0.03)}
+
+    /* sidebar */
+    .sidebar .section-title{font-weight:700;margin-bottom:8px}
+    .contact a{display:block;color:var(--muted);margin-bottom:6px}
+
+    /* Projects list */
+    .projects ul{list-style:none;padding:0;margin:0}
+    .projects li{padding:12px 8px;border-left:3px solid transparent}
+    .projects li + li{border-top:1px dashed #eee}
+    .projects h3{margin:0;font-size:16px}
+    .meta{color:var(--muted);font-size:13px}
+
+    /* coursework table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+
+    /* blog */
+    .post{margin-bottom:18px}
+    .post h4{margin:0}
+
+    footer{max-width:1100px;margin:36px auto;padding:18px;color:var(--muted);font-size:14px}
+
+    /* mobile */
+    @media (max-width:900px){.two-col{grid-template-columns:1fr}.banner{height:260px}.profile-photo{width:86px;height:86px}.hero-text h1{font-size:22px}}
+  </style>
+</head>
+<body>
+  <!-- Top navigation -->
+  <nav class="topnav">
+    <div class="container menu">
+      <div style="display:flex;align-items:center;gap:14px">
+        <strong>Gokul R</strong>
+        <span style="color:var(--muted);font-size:13px">— Undergrad Mathematics (IISER Mohali)</span>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <a href="#home" class="active">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#notes">Math Notes</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner / Hero -->
+  <header>
+    <div class="banner" id="banner" style="background-image: url('math-banner.jpg')">
+      <div class="hero">
+        <div class="profile-photo">
+          <!-- Put profile photo at /gokul-profile.jpg -->
+          <img src="gokul-profile.jpg" alt="Gokul R">
+        </div>
+        <div class="hero-text">
+          <h1>Gokul R</h1>
+          <p>Undergrad mathematics student interested in pure mathematics. Research interests: Cryptography, Machine Learning, Topology.</p>
+          <p style="margin-top:10px"><span class="meta">BSMS Mathematics, IISER Mohali — MS20 batch</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="two-col">
+      <div>
+        <section class="card">
+          <h2>About</h2>
+          <p>I'm a BSMS Mathematics student at IISER Mohali (MS20 batch). I enjoy studying pure mathematics and exploring applications in cryptography and machine learning. This site hosts my projects, notes, and a short blog.</p>
+        </section>
+
+        <section id="projects" class="card projects" style="margin-top:18px">
+          <h2>Projects</h2>
+          <ul>
+            <li>
+              <h3>Offline Speech Notes App</h3>
+              <p class="meta">Converts speech to notes locally — a privacy-focused note-taking app using offline speech recognition.</p>
+            </li>
+            <li>
+              <h3>LLM from Scratch (planned)</h3>
+              <p class="meta">Exploring transformer internals and training small-scale language models for study and experimentation.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section id="coursework" class="card" style="margin-top:18px">
+          <h2>Selected Coursework</h2>
+          <table>
+            <thead><tr><th>Course</th><th>Term / Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Real Analysis</td><td>Core undergraduate course</td></tr>
+              <tr><td>Algebra</td><td>Rings, Fields, Group theory</td></tr>
+              <tr><td>Topology</td><td>Point-set & Algebraic basics</td></tr>
+              <tr><td>Cryptography (self-study)</td><td>Modern crypto primitives</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="notes" class="card" style="margin-top:18px">
+          <h2>Math Notes & Writings</h2>
+          <p>Here I keep select notes, proofs, and short expositions on topics I study (manifolds, topology, algebra). Example entries:</p>
+          <ul>
+            <li><strong>Tangent spaces:</strong> explanations via curves, derivations, coordinate partials.</li>
+            <li><strong>Poincaré–Bendixson:</strong> notes and examples.</li>
+          </ul>
+          <p><em>Tip:</em> You can add PDFs or link to your GitHub-hosted notes from this section.</p>
+        </section>
+
+        <section id="blog" class="card" style="margin-top:18px">
+          <h2>Blog</h2>
+          <article class="post">
+            <h4>Welcome — site launched</h4>
+            <p class="meta">Nov 27, 2025</p>
+            <p>This is a small academic-style site — I'll post notes and short write-ups here.</p>
+          </article>
+
+          <article class="post">
+            <h4>Thoughts on Offline Speech Notes</h4>
+            <p class="meta">Draft</p>
+            <p>Short intro to the goals and architecture of the offline speech notes app.</p>
+          </article>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card contact">
+          <div class="section-title">Contact</div>
+          <a href="mailto:nkgokul5@gmail.com">nkgokul5@gmail.com</a>
+          <a href="https://github.com/your-username" target="_blank">GitHub</a>
+          <a href="#blog">Blog</a>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title">Interests</div>
+          <div>Cryptography</div>
+          <div>Machine Learning</div>
+          <div>Topology</div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title">Quick Links</div>
+          <a href="#projects">Projects</a>
+          <a href="#coursework">Coursework</a>
+          <a href="#notes">Notes</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <strong>Gokul R</strong> — BSMS Mathematics, IISER Mohali · Built with plain HTML & CSS · <span style="color:var(--muted)">Last updated: Nov 27, 2025</span></div>
+  </footer>
+
+  <script>
+    // Smooth scrolling and active menu highlighting
+    document.querySelectorAll('.menu a').forEach(link=>{
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelectorAll('.menu a').forEach(x=>x.classList.remove('active'));
+        this.classList.add('active');
+        const id = this.getAttribute('href').slice(1);
+        const el = document.getElementById(id) || document.querySelector('main');
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+
+  <!--
+    INSTRUCTIONS:
+    1) Rename this file to index.html and push to a repo named: yourusername.github.io
+    2) Upload two image files to the repo root:
+       - math-banner.jpg  (your chosen background image)
+       - gokul-profile.jpg (profile photo, square works best)
+    3) Edit the contact links (GitHub) and any text in the HTML to personalize further.
+    4) In GitHub: Settings -> Pages -> Deploy from branch: main, / (root). The site will be available at: https://yourusername.github.io
+
+    If you want, send me the two image files here (banner + profile) and I'll integrate them into the HTML for you (i.e., embed & provide a final index.html). 
+  -->
+</body>
+</html>
+
